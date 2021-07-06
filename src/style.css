@@ -1,0 +1,14 @@
+.main {
+    background: #1a5bbc;
+    padding-top: 30px;
+    padding-bottom: 360px;
+    font-family: 'Courier New', monospace;
+}
+
+.header {
+    padding-left: 90px;
+    padding-right: 90px;
+    text-align: left;
+    color: white;
+    font-size: 30px;
+}
