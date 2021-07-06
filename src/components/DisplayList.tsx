@@ -8,14 +8,13 @@ interface listProps {
 
 interface DisplayListProps {
     listOfItems: listProps[];
-    //description: string;
 }
 
 const DisplayList: React.FC<DisplayListProps> = ({listOfItems}) => {
     return (
         <div> 
             <div>
-                {listOfItems.map(listDes => <div>{listDes.description}</div>)}
+                {listOfItems.map(listDes => <li className="a">{listDes.description}</li>)}
             </div>
         </div>
     )

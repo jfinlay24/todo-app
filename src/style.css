@@ -12,3 +12,8 @@
     color: white;
     font-size: 30px;
 }
+li.a {
+    list-style-type: square;
+    color: white;
+
+}

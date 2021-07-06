@@ -3,7 +3,22 @@ import ReactDOM from 'react-dom';
 import Todo from "./components/Todo"
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(<Todo todoHeading="ToDo App"/>, document.getElementById('root'));
+const todoList = [
+    {
+        id: 1,
+        description: "List item 1"
+    },
+    {
+        id: 2,
+        description: "List item 2"
+    },
+    {
+        id: 3,
+        description: "List item 3"
+    }
+]
+
+ReactDOM.render(<Todo list={todoList}/>, document.getElementById('root'));
 
 
 // If you want to start measuring performance in your app, pass a function
