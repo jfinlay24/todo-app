@@ -20,5 +20,4 @@ const DisplayList: React.FC<DisplayListProps> = ({listOfItems}) => {
     )
 };
 
-
 export default DisplayList;

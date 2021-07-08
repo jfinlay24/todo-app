@@ -12,16 +12,15 @@ interface ListProps {
     list: TodoListProps[];
 }
 
-const Todo: React.FC<ListProps> = (list) => {
-    console.log(list.list[0].description) //no idea why it's like this.
+const Todo: React.FC<ListProps> = ({list}) => { //{list} would replace props so below doesn't look like props.list
     return (
         <div className="main">
             <header className="header">
             <input
                 placeholder="Enter detail"
             />
-            <RemainingListCount listOfItems={list.list}></RemainingListCount>
-            <DisplayList listOfItems={list.list} ></DisplayList>
+            <RemainingListCount numberOfItems={list.length}></RemainingListCount>
+            <DisplayList listOfItems={list} ></DisplayList>
             </header>
         </div>
     );

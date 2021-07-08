@@ -4,18 +4,22 @@ function App() {
 
   const todoList = [
     {
-        id: 1,
-        description: "List item 1"
+      id: 1,
+      description: "List item 1"
     },
     {
-        id: 2,
-        description: "List item 2"
+      id: 2,
+      description: "List item 2"
     },
     {
-        id: 3,
-        description: "List item 3"
+      id: 3,
+      description: "List item 3"
+    },
+    {
+      id: 4,
+      description: "List item 4"
     }
-]
+  ]
   return (
     <Todo list={todoList} />
   )

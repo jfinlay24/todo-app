@@ -1,20 +1,15 @@
 import React from "react";
 import "../style.css";
 
-interface listProps {
-    id: number;
-    description: string;
-}
-
 interface RemainingListProps {
-    listOfItems: listProps[];
+    numberOfItems: number;
 }
 
-const RemainingListCount: React.FC<RemainingListProps> = ({listOfItems}) => {
+const RemainingListCount: React.FC<RemainingListProps> = ({numberOfItems}) => {
     return (
         <div> 
             <div>
-                {listOfItems.length} task remaining
+                {numberOfItems} task remaining
             </div>
         </div>
     )
