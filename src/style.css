@@ -17,3 +17,8 @@ li.a {
     color: white;
 
 }
+.taskremaining {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
