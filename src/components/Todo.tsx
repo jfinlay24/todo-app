@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import '../style.css';
 import DisplayList from "./DisplayList";
 import RemainingListCount from "./RemainingTaskCount"
+import FormInput from './FormInput';
 
 interface TodoListProps {
     id: number;
@@ -13,14 +14,27 @@ interface ListProps {
 }
 
 const Todo: React.FC<ListProps> = ({list}) => { //{list} would replace props so below doesn't look like props.list
+
+    const [ toDoList, setToDoList ] = useState(list);
+
+    const addTask = (userInput: any ) => {
+        if(!userInput) {
+            alert("Please enter a task");
+            return false;
+        }
+        else {
+            let copyList = [...toDoList];
+            copyList = [...copyList, { id: toDoList.length + 1, description: userInput }];
+            setToDoList(copyList);
+        }
+    }
+    console.log(toDoList[toDoList.length -1])
     return (
         <div className="main">
             <header className="header">
-            <input
-                placeholder="Enter detail"
-            />
-            <RemainingListCount numberOfItems={list.length}></RemainingListCount>
-            <DisplayList listOfItems={list} ></DisplayList>
+            <FormInput addTask={addTask}/>
+            <RemainingListCount numberOfItems={toDoList.length}></RemainingListCount>
+            <DisplayList listOfItems={toDoList} ></DisplayList>
             </header>
         </div>
     );
