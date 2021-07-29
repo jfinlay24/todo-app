@@ -14,27 +14,18 @@ interface ListProps {
 }
 
 const Todo: React.FC<ListProps> = ({list}) => { //{list} would replace props so below doesn't look like props.list
-
     const [ toDoList, setToDoList ] = useState(list);
-
     const addTask = (userInput: any ) => {
-        if(!userInput) {
-            alert("Please enter a task");
-            return false;
-        }
-        else {
-            let copyList = [...toDoList];
-            copyList = [...copyList, { id: toDoList.length + 1, description: userInput }];
-            setToDoList(copyList);
-        }
+        let copyList = [...toDoList];
+        copyList = [...copyList, { id: toDoList.length + 1, description: userInput }];
+        setToDoList(copyList);
     }
-    console.log(toDoList[toDoList.length -1])
     return (
         <div className="main">
             <header className="header">
             <FormInput addTask={addTask}/>
-            <RemainingListCount numberOfItems={toDoList.length}></RemainingListCount>
-            <DisplayList listOfItems={toDoList} ></DisplayList>
+            <RemainingListCount numberOfItems={toDoList.length}/>
+            <DisplayList listOfItems={toDoList}/>
             </header>
         </div>
     );

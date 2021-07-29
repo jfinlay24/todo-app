@@ -1,5 +1,7 @@
 import React from 'react';
 import Todo from "./components/Todo";
+import './style.css';
+
 function App() {
 
   const todoList = [
@@ -21,7 +23,7 @@ function App() {
     }
   ]
   return (
-    <Todo list={todoList} />
+        <Todo list={todoList} />
   )
 };
 export default App;
