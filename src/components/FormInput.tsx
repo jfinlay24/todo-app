@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
+import TodoListProps from '../TypescriptProps';
 
 interface FormInputProp {
     addTask: any;
+    listOfItems: TodoListProps[];
 }
 
-const FormInput: React.FC<FormInputProp> = ({ addTask }) => {
+const FormInput: React.FC<FormInputProp> = ({ addTask, listOfItems }) => {
     const [ userInput, setUserInput ] = useState('');
     const [ inputError, setInputError ] = useState('');
+    let listCheck = listOfItems.map(listDes => listDes.description);
     const errorCheck = () => {
         if (!userInput) {
             setInputError("No blank spaces");
             return false;
         }
-        // if (userInput === fullList) {
-        //     setInputError("Item already on list.");
-        // }
+        if (listCheck.includes(userInput.trim())) {
+            setInputError("Item already on list.");
+            return false
+        }
         return true;
     }
     const handleChange = (e: { currentTarget: { value: React.SetStateAction<string>; }; }) => {
@@ -25,13 +29,12 @@ const FormInput: React.FC<FormInputProp> = ({ addTask }) => {
         e.preventDefault();
         const isValid = errorCheck();
         if(!isValid) {
-            setUserInput("");
         }
         else{
             setInputError('');
             addTask(userInput);
-            setUserInput("");
         }
+        setUserInput("");
     } 
     return (
         <form onSubmit={handleSubmit}>

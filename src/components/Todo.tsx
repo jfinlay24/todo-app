@@ -3,11 +3,7 @@ import '../style.css';
 import DisplayList from "./DisplayList";
 import RemainingListCount from "./RemainingTaskCount"
 import FormInput from './FormInput';
-
-interface TodoListProps {
-    id: number;
-    description: string;
-}
+import TodoListProps from '../TypescriptProps';
 
 interface ListProps {
     list: TodoListProps[];
@@ -23,7 +19,7 @@ const Todo: React.FC<ListProps> = ({list}) => { //{list} would replace props so 
     return (
         <div className="main">
             <header className="header">
-            <FormInput addTask={addTask}/>
+            <FormInput addTask={addTask} listOfItems={toDoList} />
             <RemainingListCount numberOfItems={toDoList.length}/>
             <DisplayList listOfItems={toDoList}/>
             </header>

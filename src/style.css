@@ -1,5 +1,5 @@
 .main {
-    background: #1a5bbc;
+    background: #3c005a;
     padding-top: 30px;
     padding-bottom: 360px;
     font-family: 'Courier New', monospace;
@@ -19,11 +19,12 @@ li.a {
     color: white;
 }
 .taskremaining {
-    color: black;
+    color: blue;
     font-size: 30px;
     font-weight: bold;
 }
 .errorHeader {
     color: red;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: bold;
 }
