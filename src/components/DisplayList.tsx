@@ -13,7 +13,7 @@ interface DisplayListProps {
 const DisplayList: React.FC<DisplayListProps> = ({listOfItems}) => {
     return (
         <div> 
-            <div>
+            <div className="listdisplay">
                 {listOfItems.map(listDes => <li className="a">{listDes.description}</li>)}
             </div>
         </div>

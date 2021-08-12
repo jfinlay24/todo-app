@@ -8,7 +8,7 @@ interface RemainingListProps {
 const RemainingListCount: React.FC<RemainingListProps> = ({numberOfItems}) => {
     return (
         <div> 
-            <div>
+            <div className="listdisplay">
                 {numberOfItems} task remaining
             </div>
         </div>

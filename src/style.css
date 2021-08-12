@@ -4,13 +4,19 @@
     padding-bottom: 360px;
     font-family: 'Courier New', monospace;
 }
-
+.headerTitle {
+    padding-left: 90px;
+    padding-right: 90px;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+  }
 .header {
     padding-left: 90px;
     padding-right: 90px;
-    padding-top: 90px;
+    padding-top: 0px;
     padding-bottom: 90px;
-    text-align: left;
+    text-align: center;
     color: white;
     font-size: 30px;
 }
