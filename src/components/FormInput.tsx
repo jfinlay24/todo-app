@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TodoListProps from '../TypescriptProps';
 
 interface FormInputProp {
-    addTask: any;
+    addTask: (userInput: string ) => void;
     listOfItems: TodoListProps[];
 }
 
