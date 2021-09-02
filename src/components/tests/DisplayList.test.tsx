@@ -1,7 +1,6 @@
 /**
  * @jest-environment jsdom
  */
-
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import DisplayList from '../DisplayList';
@@ -14,9 +13,11 @@ const renderDisplayList = () => {
 
 describe('DisplayList', () => {
 
-    it('should render the list of items passed to it', () => {
+    it('should render the correct number of items passed to it', () => {
         renderDisplayList();
         const listItems = screen.getAllByRole('listitem');
+
+        console.log(listItems[0])
         
         expect( listItems.length).toBe(2);
     });
