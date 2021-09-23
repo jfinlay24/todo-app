@@ -5,15 +5,21 @@ import Todo from "./components/Todo"
 const todoList = [
     {
         id: 1,
-        description: "List item 1"
+        description: "List item 1",
+        checked: false,
+        textDecor: "clear"
     },
     {
         id: 2,
-        description: "List item 2"
+        description: "List item 2",
+        checked: false,
+        textDecor: "clear"
     },
     {
         id: 3,
-        description: "List item 3"
+        description: "List item 3",
+        checked: false,
+        textDecor: "clear"
     }
 ]
 

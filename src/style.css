@@ -21,3 +21,9 @@ li.a {
     font-size: 30px;
     font-weight: bold;
 }
+.line {
+    text-decoration: line-through;
+  }
+.clear {
+    text-decoration: null;
+  }

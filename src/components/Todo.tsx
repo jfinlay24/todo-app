@@ -7,6 +7,8 @@ import FormInput from './FormInput';
 interface TodoListProps {
     id: number;
     description: string;
+    checked: boolean;
+    textDecor: string;
 }
 
 interface ListProps {
@@ -24,7 +26,7 @@ const Todo: React.FC<ListProps> = ({list}) => { //{list} would replace props so 
         }
         else {
             let copyList = [...toDoList];
-            copyList = [...copyList, { id: toDoList.length + 1, description: userInput }];
+            copyList = [...copyList, { id: toDoList.length + 1, description: userInput, checked: false, textDecor: "clear" }];
             setToDoList(copyList);
         }
     }
