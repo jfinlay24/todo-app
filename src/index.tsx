@@ -13,13 +13,13 @@ const todoList = [
         id: 2,
         description: "List item 2",
         checked: true,
-        textDecor: "line"
+        textDecor: "clear"
     },
     {
         id: 3,
         description: "List item 3",
         checked: true,
-        textDecor: "line"
+        textDecor: "clear"
     }
 ]
 
