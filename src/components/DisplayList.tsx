@@ -13,17 +13,10 @@ interface DisplayListProps {
 }
 
 const DisplayList: React.FC<DisplayListProps> = ({ listOfItems }) => {
-    //const [checkedState, setCheckedState] = useState(new Array(listOfItems.length).fill(false));
     const [updatedList, setUpdatedList] = useState(listOfItems);
 
     const handleOnChange = (checkedId: number) => {
         let copyList = [...listOfItems];
-        //newArr[checkedId-1] = ! newArr[checkedId-1];
-        //setCheckedState(newArr);
-
-        // let decorArr = copyList[checkedId - 1].textDecor;
-        // let newDecor = decorArr === 'clear' ? decorArr = 'line' : decorArr = 'clear';
-
         let decorArr = copyList[checkedId -1].textDecor === 'clear' ? copyList[checkedId -1].textDecor = 'line' : copyList[checkedId -1].textDecor = 'clear';
         setUpdatedList(copyList);
         console.log(decorArr);
