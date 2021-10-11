@@ -13,19 +13,17 @@ interface DisplayListProps {
 }
 
 const DisplayList: React.FC<DisplayListProps> = ({ listOfItems }) => {
-    const [updatedList, setUpdatedList] = useState(listOfItems);
+    const [, setUpdatedList] = useState(listOfItems);
 
     const handleOnChange = (checkedId: number) => {
         let copyList = [...listOfItems];
-        let decorArr = copyList[checkedId -1].textDecor === 'clear' ? copyList[checkedId -1].textDecor = 'line' : copyList[checkedId -1].textDecor = 'clear';
+        copyList[checkedId -1].textDecor === 'clear' ? copyList[checkedId -1].textDecor = 'line' : copyList[checkedId -1].textDecor = 'clear';
         setUpdatedList(copyList);
-        console.log(decorArr);
-
     };
     return (
         <div>
             <label>
-                {listOfItems.map(({ id, description, checked, textDecor }) => {
+                {listOfItems.map(({ id, description, textDecor }) => {
                     return (
                         <div key={id}>
                             <div>
@@ -36,7 +34,6 @@ const DisplayList: React.FC<DisplayListProps> = ({ listOfItems }) => {
                                         name={description}
                                         value={description}
                                         onChange={() => handleOnChange(id)}
-                                        //checked={checked}
                                     />
                                     <label htmlFor={`custom-checkbox-${id}`}>{description}</label>
                                 </li>
