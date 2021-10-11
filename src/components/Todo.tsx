@@ -30,14 +30,14 @@ const Todo: React.FC<ListProps> = ({list}) => { //{list} would replace props so 
             setToDoList(copyList);
         }
     }
-    console.log(toDoList[toDoList.length -1])
     return (
         <div className="main">
-            <header className="header">
+            <h3 className="title"> ToDo List </h3> 
+            <div className="formdisplay">
             <FormInput addTask={addTask}/>
             <RemainingListCount numberOfItems={toDoList.length}></RemainingListCount>
             <DisplayList listOfItems={toDoList} ></DisplayList>
-            </header>
+            </div>
         </div>
     );
 }
