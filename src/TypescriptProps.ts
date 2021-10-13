@@ -1,6 +1,6 @@
 export default interface TodoListProps {
     id: number;
     description: string;
-    checked: false;
+    checked: boolean;
     textDecor: string;
 }

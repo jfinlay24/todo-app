@@ -18,6 +18,11 @@
     margin: auto;
     width: 60%;
 }
+.errorHeader {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
 li.a {
     list-style-type: square;
     color: white;
