@@ -5,13 +5,6 @@ import RemainingListCount from "./RemainingTaskCount"
 import FormInput from './FormInput';
 import TodoListProps from '../TypescriptProps';
 
-// interface TodoListProps {
-//     id: number;
-//     description: string;
-//     checked: boolean;
-//     textDecor: string;
-// }
-
 interface ListProps {
     list: TodoListProps[];
 }

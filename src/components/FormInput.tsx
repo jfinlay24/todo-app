@@ -38,9 +38,13 @@ const FormInput: React.FC<FormInputProp> = ({ addTask, listOfItems }) => {
     } 
     return (
         <form onSubmit={handleSubmit}>
-            <input value={userInput} type="text" onChange={handleChange} placeholder="Enter task..."/>
+            <div>
+                <input className="inputbox" value={userInput} type="text" onChange={handleChange} placeholder="Enter task..."/>
+            </div>
             <div className="errorHeader">{inputError}</div>
-            <button>Submit</button>
+            <div>
+                <button className="inputbutton">Submit</button>
+            </div>
         </form>
     );
 };
