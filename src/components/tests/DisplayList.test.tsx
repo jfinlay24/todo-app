@@ -21,7 +21,9 @@ describe('DisplayList', () => {
     });
 
 
-});describe('DisplayList', () => {
+});
+
+describe('DisplayList', () => {
 
     it('should list the number of items without a strikethrough', () => {
         renderDisplayList();
