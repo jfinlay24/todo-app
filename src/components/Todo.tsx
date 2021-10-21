@@ -3,11 +3,7 @@ import '../style.css';
 import DisplayList from "./DisplayList";
 import RemainingListCount from "./RemainingTaskCount"
 import FormInput from './FormInput';
-
-interface TodoListProps {
-    id: number;
-    description: string;
-}
+import TodoListProps from '../TypescriptProps';
 
 interface ListProps {
     list: TodoListProps[];
@@ -24,18 +20,18 @@ const Todo: React.FC<ListProps> = ({list}) => { //{list} would replace props so 
         }
         else {
             let copyList = [...toDoList];
-            copyList = [...copyList, { id: toDoList.length + 1, description: userInput }];
+            copyList = [...copyList, { id: toDoList.length + 1, description: userInput, checked: false, textDecor: "clear" }];
             setToDoList(copyList);
         }
     }
-    console.log(toDoList[toDoList.length -1])
     return (
         <div className="main">
-            <header className="header">
-            <FormInput addTask={addTask}/>
+            <h3 className="title"> ToDo List </h3> 
+            <div className="formdisplay">
+            <FormInput addTask={addTask} listOfItems={toDoList}/>
             <RemainingListCount numberOfItems={toDoList.length}></RemainingListCount>
             <DisplayList listOfItems={toDoList} ></DisplayList>
-            </header>
+            </div>
         </div>
     );
 }
