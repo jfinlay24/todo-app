@@ -20,7 +20,7 @@ const Todo: React.FC<ListProps> = ({list}) => { //{list} would replace props so 
         }
         else {
             let copyList = [...toDoList];
-            copyList = [...copyList, { id: toDoList.length + 1, description: userInput, checked: false, textDecor: "clear" }];
+            copyList = [...copyList, { id: toDoList.length + 1, description: userInput, textDecor: "clear" }];
             setToDoList(copyList);
         }
     }
