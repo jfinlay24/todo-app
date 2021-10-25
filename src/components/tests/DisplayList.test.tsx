@@ -37,7 +37,7 @@ describe('DisplayList', () => {
 
     it('should correctly display text in first todo item', () => {
         renderDisplayList();
-        
+
         expect(listOfItems[0].description).toContain('item1');
     });
 });

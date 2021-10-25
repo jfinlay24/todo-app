@@ -17,11 +17,6 @@ function App() {
       id: 3,
       description: "List item 3",
       textDecor: "line"
-    },
-    {
-      id: 4,
-      description: "List item 4",
-      textDecor: "line"
     }
   ]
   return (
