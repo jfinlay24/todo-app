@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
-import TodoListProps from '../TypescriptProps';
+//import TodoListProps from '../TypescriptProps';
+
+// interface FormInputProp {
+//     addTask: (userInput: string ) => void;
+//     listOfItems: TodoListProps[];
+// }
+
+interface listProps {
+    id: number;
+    description: string;
+    textDecor: string //try out enum
+}
 
 interface FormInputProp {
     addTask: (userInput: string ) => void;
-    listOfItems: TodoListProps[];
+    listOfItems: listProps[];
 }
 
 const FormInput: React.FC<FormInputProp> = ({ addTask, listOfItems }) => {
@@ -27,10 +38,12 @@ const FormInput: React.FC<FormInputProp> = ({ addTask, listOfItems }) => {
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        console.log("test");
         const isValid = errorCheck();
         if(!isValid) {
         }
         else{
+            console.log("test");
             setInputError('');
             addTask(userInput.trim());
         }
