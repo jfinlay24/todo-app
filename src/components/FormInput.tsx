@@ -23,7 +23,7 @@ const FormInput: React.FC<FormInputProp> = ({ addTask, listOfItems }) => {
     let listCheck = listOfItems.map(listDes => listDes.description);
     const errorCheck = () => {
         if (!userInput.trim()){
-            setInputError("No blank spaces");
+            setInputError("No blank spaces");//rephase
             return false;
         }
         if (listCheck.includes(userInput.trim())) {
@@ -42,12 +42,10 @@ const FormInput: React.FC<FormInputProp> = ({ addTask, listOfItems }) => {
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        console.log("test");
         const isValid = errorCheck();
         if(!isValid) {
         }
         else{
-            console.log("test");
             setInputError('');
             addTask(userInput.trim());
         }
