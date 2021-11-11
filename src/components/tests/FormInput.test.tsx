@@ -20,23 +20,22 @@
     it('should return true on valid input', () => {
         renderDisplayList();
         //const listItems = screen.getAllByRole('listitem');
-        const userInput = "This is a test task";
+        const userInput = "Writing tests";
         const errorCheck = () => {
             if (!userInput.trim()){
                 return false;
             }
-            // if (userInput.trim().length > 15){
-            //     return false
-            // }
+            if (userInput.trim().length > 15){
+                console.log(userInput.length);
+                return false
+            }
             // if (listOfItems.includes(userInput.trim())) {
-            //     //const inputError = "Item already on list.";
             //     return false
             // }
             return true;
         }
 
         const isValid = errorCheck();
-
         expect(isValid).toBeTruthy();
         
     });

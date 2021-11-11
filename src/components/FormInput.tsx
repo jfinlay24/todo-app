@@ -30,6 +30,10 @@ const FormInput: React.FC<FormInputProp> = ({ addTask, listOfItems }) => {
             setInputError("Item already on list.");
             return false
         }
+        if (userInput.trim().length > 15){
+            setInputError("Too many characters. Limit is 15.");
+            return false
+        }
         return true;
     }
     const handleChange = (e: { currentTarget: { value: React.SetStateAction<string>; }; }) => {
