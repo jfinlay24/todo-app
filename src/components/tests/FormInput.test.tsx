@@ -20,7 +20,7 @@
     it('should return true on valid input', () => {
         renderFormInput();
 
-        const textbox = screen.getByRole('textbox') instanceof HTMLInputElement;
+        const textbox = screen.getByRole('textbox') as HTMLInputElement;
         textbox.value = "input test";
         screen.debug();
         //const listItems = screen.getAllByRole('listitem');
