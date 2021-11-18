@@ -1,48 +1,36 @@
 /**
- * @jest-environment jsdom
- */
- import * as React from 'react';
- import { render, screen } from '@testing-library/react';
- import FormInput from '../FormInput';
+* @jest-environment jsdom
+*/
+import userEvent from '@testing-library/user-event';
+import * as React from 'react';
+import { render, screen } from '@testing-library/react';
+import FormInput from '../FormInput';
  
- const addTask = () => {
+const addTask = (userInput: any) => {
+    
+}
 
- }
-
- const listOfItems = [ {id:0 , description: 'item1', textDecor: 'clear'}, {id:1, description: 'item2', textDecor: 'line'}];
- const renderFormInput = () => { 
+const listOfItems = [ {id:0 , description: 'item1', textDecor: 'clear'}, {id:1, description: 'item2', textDecor: 'line'}];
+const renderFormInput = () => { 
      render( <FormInput addTask={addTask} listOfItems={listOfItems}/> )
  
- };
+};
 
- describe('FormInput', () => {
+describe('FormInput', () => {
 
-    it('should return true on valid input', () => {
+    it('should display character limit error', async () => {
         renderFormInput();
+        const expectedUserInput = "This input is too long.";
+        const addButton = screen.getByRole('inputbox')
 
-        const textbox = screen.getByRole('textbox') instanceof HTMLInputElement;
-        textbox.value = "input test";
-        screen.debug();
-        //const listItems = screen.getAllByRole('listitem');
-        // const userInput = "Writing tests";
-        // const errorCheck = () => {
-        //     if (!userInput.trim()){
-        //         return false;
-        //     }
-        //     if (userInput.trim().length > 15){
-        //         console.log(userInput.length);
-        //         return false
-        //     }
-        //     // if (listOfItems.includes(userInput.trim())) {
-        //     //     return false
-        //     // }
-        //     return true;
-        // }
+        userEvent.type(FormInput, expectedUserInput);
+        userEvent.type(screen.getByRole('textbox'), expectedUserInput);
+        userEvent.click(addButton);
+        //screen.debug();
 
-        //const isValid = errorCheck();
-        //expect(isValid).toBeTruthy();
+        const checkText = await screen.findByText('Too many characters. Limit is 15.');
+        expect(checkText).toBeInTheDocument();
         
     });
-
 });
 

@@ -12,7 +12,7 @@ interface listProps {
     textDecor: string //try out enum
 }
 
-interface FormInputProp {
+export interface FormInputProp {
     addTask: (userInput: string ) => void;
     listOfItems: listProps[];
 }
@@ -23,7 +23,7 @@ const FormInput: React.FC<FormInputProp> = ({ addTask, listOfItems }) => {
     let listCheck = listOfItems.map(listDes => listDes.description);
     const errorCheck = () => {
         if (!userInput.trim()){
-            setInputError("No blank spaces");//rephase
+            setInputError("Please enter an item.");
             return false;
         }
         if (listCheck.includes(userInput.trim())) {
@@ -53,7 +53,7 @@ const FormInput: React.FC<FormInputProp> = ({ addTask, listOfItems }) => {
     } 
     return (
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className="formlayout">
                 <input className="inputbox" value={userInput} type="text" onChange={handleChange} placeholder="Enter task..."/>
             </div>
             <div className="errorHeader">{inputError}</div>

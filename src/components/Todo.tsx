@@ -9,13 +9,13 @@ interface ListProps {
     list: TodoListProps[];
 }
 
-const Todo: React.FC<ListProps> = ({list}) => { //{list} would replace props so below doesn't look like props.list
+const Todo: React.FC<ListProps> = ({list}) => {
 
     const [ toDoList, setToDoList ] = useState(list);
 
     const addTask = (userInput: any ) => {
         if(!userInput) {
-            alert("Please enter a task");
+            //alert("Please enter a task");
             return false;
         }
         else {
