@@ -1,11 +1,11 @@
 import React from "react";
 import "../style.css";
 
-interface RemainingListProps {
+interface RemainingTaskProps {
     numberOfItems: number;
 }
 
-const RemainingListCount: React.FC<RemainingListProps> = ({numberOfItems}) => {
+const RemainingTaskCount: React.FC<RemainingTaskProps> = ({numberOfItems}) => {
     return (
         <div> 
             <div>
@@ -15,4 +15,4 @@ const RemainingListCount: React.FC<RemainingListProps> = ({numberOfItems}) => {
     )
 };
 
-export default RemainingListCount;
+export default RemainingTaskCount;
