@@ -15,7 +15,6 @@ const Todo: React.FC<ListProps> = ({list}) => {
 
     const addTask = (userInput: any ) => {
         if(!userInput) {
-            //alert("Please enter a task");
             return false;
         }
         else {
