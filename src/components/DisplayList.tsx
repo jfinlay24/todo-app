@@ -4,7 +4,6 @@ import "../style.css";
 interface listProps {
     id: number;
     description: string;
-    checked: boolean,
     textDecor: string //try out enum
 }
 
